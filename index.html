@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#07060d" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.45' stop-color='%2363f2ff'/%3E%3Cstop offset='1' stop-color='%23b48cff' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='34' r='28' fill='url(%23g)'/%3E%3C/svg%3E" />
+    <title>WISP</title>
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+
+    <div id="ui">
+      <!-- In-game HUD -->
+      <div id="hud" class="hidden">
+        <div class="hud-left">
+          <div class="hud-arena"><span id="hud-arena-num">ARENA 1</span><span id="hud-arena-name">Desert</span></div>
+          <div class="hud-health">
+            <div id="hud-health-fill"></div>
+            <span id="hud-health-text">100</span>
+          </div>
+        </div>
+        <div class="hud-center">
+          <div id="hud-timer" class="hud-timer">20:00</div>
+        </div>
+        <div class="hud-right">
+          <button id="btn-pause" class="icon-btn" aria-label="Pause"><span></span><span></span></button>
+        </div>
+        <div id="hud-announce" class="hud-announce"><div class="title"></div><div class="sub"></div></div>
+        <div id="hud-hint" class="hud-hint"></div>
+      </div>
+      <div id="hurt-flash"></div>
+
+      <!-- On-screen touch controls (phones/tablets) -->
+      <div id="touch" class="hidden">
+        <div id="touch-stick" class="touch-stick">
+          <div class="stick-base"><div class="stick-knob"></div></div>
+        </div>
+        <div class="touch-buttons">
+          <button id="touch-dash" class="touch-btn dash">DASH</button>
+          <button id="touch-jump" class="touch-btn jump">JUMP</button>
+        </div>
+      </div>
+
+      <!-- Screens -->
+      <section id="screen-loading" class="screen">
+        <h1 class="logo">WISP</h1>
+        <div class="progress"><div id="load-fill"></div></div>
+        <p id="load-text" class="muted">Loading…</p>
+      </section>
+
+      <section id="screen-menu" class="screen hidden">
+        <h1 class="logo">WISP</h1>
+        <p class="tagline">Survive until the clock hits <b>00:00</b>.</p>
+        <div class="buttons">
+          <button class="btn primary" data-action="play">Play</button>
+          <button class="btn" data-action="settings">Settings</button>
+        </div>
+        <div id="controls-help" class="controls-help"></div>
+      </section>
+
+      <section id="screen-settings" class="screen hidden">
+        <h2>Settings</h2>
+        <div class="settings">
+          <label>Graphics / assets
+            <select id="set-quality">
+              <option value="auto">Auto (by device)</option>
+              <option value="pc">PC (full)</option>
+              <option value="mobile">Mobile (light)</option>
+            </select>
+          </label>
+          <p id="set-quality-note" class="muted small"></p>
+          <label>Touch controls
+            <select id="set-touch">
+              <option value="auto">Auto</option>
+              <option value="on">On</option>
+              <option value="off">Off</option>
+            </select>
+          </label>
+          <label>Music <input id="set-music" type="range" min="0" max="1" step="0.05" /></label>
+          <label>Sound effects <input id="set-sfx" type="range" min="0" max="1" step="0.05" /></label>
+        </div>
+        <div class="buttons">
+          <button class="btn primary" data-action="settings-back">Back</button>
+        </div>
+      </section>
+
+      <section id="screen-pause" class="screen hidden dim">
+        <h2>Paused</h2>
+        <div class="buttons">
+          <button class="btn primary" data-action="resume">Resume</button>
+          <button class="btn" data-action="restart">Restart</button>
+          <button class="btn" data-action="pause-settings">Settings</button>
+          <button class="btn" data-action="quit">Quit to menu</button>
+        </div>
+      </section>
+
+      <section id="screen-over" class="screen hidden dim">
+        <h2 class="bad">Dissolved</h2>
+        <div class="stats">
+          <div><span>Time survived</span><b id="over-time">00:00</b></div>
+          <div><span>Arena reached</span><b id="over-arena">1</b></div>
+          <div><span>Time left</span><b id="over-left">20:00</b></div>
+        </div>
+        <div class="buttons">
+          <button class="btn primary" data-action="restart">Try again</button>
+          <button class="btn" data-action="quit">Menu</button>
+        </div>
+      </section>
+
+      <section id="screen-win" class="screen hidden dim">
+        <h2 class="good">00:00 — You survived</h2>
+        <p class="tagline">Twenty minutes, five arenas. The wisp endures.</p>
+        <div class="buttons">
+          <button class="btn primary" data-action="restart">Play again</button>
+          <button class="btn" data-action="quit">Menu</button>
+        </div>
+      </section>
+
+      <div id="rotate-hint" class="hidden">Turn your device sideways for the best view</div>
+      <div id="debug-stats" class="hidden"></div>
+      <div id="error-box" class="hidden"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

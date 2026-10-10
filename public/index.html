@@ -1,9 +1,97 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My first site</title>
-  </head>
-  <body>
-    <h1>Hello from Cloudflare!</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0d0f1a">
+  <title>first</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="src/style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/three.module.js",
+        "three/addons/": "./vendor/three/addons/",
+        "@sparkjsdev/spark": "./vendor/spark/spark.module.min.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="game" aria-label="Game view"></canvas>
+
+  <!-- Boot: waits for the asset list -->
+  <section id="boot" class="screen on">
+    <p class="muted" id="boot-msg">Loading…</p>
+  </section>
+
+  <!-- Character select -->
+  <section id="select" class="screen">
+    <h1>Choose your fighter</h1>
+    <div id="roster" role="list"></div>
+    <p class="hint" id="controls-hint"></p>
+  </section>
+
+  <!-- Loading a fight -->
+  <section id="loading" class="screen">
+    <div id="vs"></div>
+    <div class="progress"><i id="progress-fill"></i></div>
+    <p class="muted" id="loading-msg">Loading…</p>
+    <button id="retry" class="btn" hidden>Retry</button>
+  </section>
+
+  <!-- In-fight HUD -->
+  <div id="hud" hidden>
+    <div class="side p1">
+      <div class="name" id="name1"></div>
+      <div class="hp"><i class="ghost" id="ghost1"></i><i class="fill" id="fill1"></i></div>
+      <div class="pips" id="pips1"></div>
+    </div>
+    <div class="round" id="round"></div>
+    <div class="side p2">
+      <div class="name" id="name2"></div>
+      <div class="hp"><i class="ghost" id="ghost2"></i><i class="fill" id="fill2"></i></div>
+      <div class="pips" id="pips2"></div>
+    </div>
+  </div>
+  <div id="banner" aria-live="polite"></div>
+
+  <!-- Touch controls (phones/tablets) -->
+  <div id="touch" hidden>
+    <div class="pad left">
+      <button data-act="left" aria-label="Move left">◀</button>
+      <button data-act="right" aria-label="Move right">▶</button>
+    </div>
+    <div class="pad right">
+      <button data-act="dodge">Dodge</button>
+      <button data-act="jump">Jump</button>
+      <button data-act="attack" class="big">Attack</button>
+    </div>
+  </div>
+
+  <section id="pause" class="screen dim">
+    <h1>Paused</h1>
+    <div class="row">
+      <button class="btn" id="resume">Resume</button>
+      <button class="btn ghost" id="quit">Change fighter</button>
+    </div>
+  </section>
+
+  <section id="result" class="screen dim">
+    <h1 id="result-title"></h1>
+    <p class="muted" id="result-sub"></p>
+    <div class="row">
+      <button class="btn" id="rematch">Rematch</button>
+      <button class="btn ghost" id="change">Change fighter</button>
+    </div>
+  </section>
+
+  <div id="corner">
+    <button class="icon" id="pause-btn" aria-label="Pause" hidden>II</button>
+    <button class="icon" id="mute" aria-label="Mute music">♪</button>
+  </div>
+  <div id="rotate">Turn your phone sideways</div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
 </html>

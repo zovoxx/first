@@ -1,0 +1,46 @@
+CONTOO - GAME ASSETS (made with the conto)
+Conto = Z-Image Turbo + Pixal3D (characters, weapons) -> TripoSplat (grounds) -> Kimodo in Blender (animations)
+        -> ACE-Step 1.5 XL Turbo (music) -> Z-Image Turbo (backgrounds) -> Blender (control, fix, export)
+Everything has a PC version and a mobile version. Side-view 2.5D game, stylized look.
+
+FOLDERS
+  contoo_assets.json        everything the game code needs: file paths, clip lengths, loops, attack hit times,
+                            walk lines, parallax speeds, music BPM and loop lengths
+  Assets/Characters/<Name>  <Name>_PC.glb and <Name>_mobile.glb - rigged (21 bones), weapon already in the hand,
+                            7 animations: idle, run, jump, dodge, hit, attack, death
+  Assets/Weapons/<id>       the 5 weapons on their own (origin = grip, long axis = +Y)
+  Assets/Grounds/<biome>    gaussian-splat ground (.spz PC / mobile, .ply source), collider .glb, preview .png,
+                            <biome>_ground.json with the walk line
+  Assets/Backgrounds/<biome> far + mid parallax layers, both tile left-right (mid has transparency)
+  Assets/Music              menu, combat and boss loops (seamless), .ogg + .mp3
+  Blender/Contoo_characters.blend   the Blender work file: all 5 characters, rigs, animation tracks, weapons
+  Pipeline/                 the scripts + Kimodo motions used to make all of this (to run the conto again)
+
+CHARACTERS (biome = home stage)
+  Kaya, the Desert Duelist            1.70 m  two daggers     desert
+  Brumm Ironbeard, the Forgemaster    1.30 m  hammer          forge
+  Volt, the Neon Runner               1.78 m  baton           neon
+  Wren Mossveil, the Forest Warden    1.95 m  bow             forest
+  Lady Frostine, the Ice Sorceress    1.92 m  staff           ice
+
+PC vs MOBILE
+                 PC                                   MOBILE
+  Characters     ~39k triangles + weapon, 4K textures  ~15k triangles + weapon, 2K textures
+  Weapons        ~20k triangles                        3.5k triangles, 1K textures
+  Grounds        262,144 splats                        65,536 splats
+  Backgrounds    PNG, full size (~1650 px wide)        WebP, half size
+  Music          192 kbps                              96 kbps
+
+CONVENTIONS
+  Metres, glTF +Y up. Characters face +Z: rotate +-90 degrees around Y to face right/left in the side view.
+  Animations are 30 fps. idle and run loop. All clips are in place - the game moves the character:
+  run has ground_speed_mps in contoo_assets.json (feet don't slide at that speed), jump keeps the crouch and
+  landing but the height comes from the game's jump physics.
+  attack: "hit_time_s" in contoo_assets.json is the moment the weapon lands (use it for damage).
+  death falls backward, so it reads well from the side camera.
+  Grounds: top surface at y = 0, walk_line = the ground height along x (use it for collision).
+  Backgrounds: suggested parallax far 0.15, mid 0.45 (mid sits on the bottom edge).
+
+ENGINES
+  three.js: GLTFLoader for characters/weapons, Spark (sparkjs) for the .spz grounds.
+  Godot 4 / Unity: the .glb files import directly; for splats use a gaussian-splat plugin, or the collider + preview.

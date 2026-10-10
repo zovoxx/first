@@ -1,0 +1,55 @@
+{
+ "jobs": {
+  "ground_desert_11": "cffc5a00-5089-4a92-bcde-ecca606b1ec4",
+  "ground_desert_22": "c3a8925d-2582-4f39-be78-d1a4657468a6",
+  "ground_forge_11": "75967428-52d2-4c77-914d-c573a0340f27",
+  "ground_forge_22": "a3402370-c0e3-434b-a240-b886c64e3d65",
+  "ground_neon_11": "be2022c4-2833-4386-a326-bb57493344c3",
+  "ground_neon_22": "7d1e5a90-a84c-46f5-8373-292b3509e5c1",
+  "ground_forest_11": "87b22de6-787f-413b-9d44-0c93cb19c3df",
+  "ground_forest_22": "2b646bdc-8ea7-4c1a-8650-c8a86152dda4",
+  "ground_ice_11": "1e2faab5-e151-4158-84cc-2df7dc3866d6",
+  "ground_ice_22": "498a3269-d5d7-456d-a061-705a25ac3848",
+  "weapon_kaya_dagger_11": "fccc5381-e186-407c-9760-8822132e5e6b",
+  "weapon_kaya_dagger_22": "44c091ff-afcb-427a-8729-d77c532b3a34",
+  "weapon_brumm_hammer_11": "9405368a-3224-4ba2-9470-0bdb00c098c7",
+  "weapon_brumm_hammer_22": "26b99cbf-0113-4a3d-bc6d-5a6a976f8b03",
+  "weapon_volt_blade_11": "a3d9f8b0-5965-480d-b6e9-f2c6023b6139",
+  "weapon_volt_blade_22": "16d2044f-084f-454b-9cf1-c3668e396068",
+  "weapon_wren_bow_11": "ef505700-fe02-4da6-a439-ed28e2bca095",
+  "weapon_wren_bow_22": "910c1264-6324-46f1-b3ff-589eb36b769d",
+  "weapon_frostine_staff_11": "7ce81571-4bbf-4626-9831-f2bdd9d1dee0",
+  "weapon_frostine_staff_22": "eb30c5d8-4926-450e-8e93-8407f6daaeaf",
+  "bg_desert_11": "4dbd6181-fc73-44d8-885a-525bdc75e527",
+  "bg_forge_11": "3b89af3d-f600-44c0-bfd1-6fdd9ce66c2f",
+  "bg_neon_11": "d29c9cf3-142b-4eed-a081-7f0ce3d3bfae",
+  "bg_forest_11": "01968cd4-1c06-41e6-a051-05c22b6bf8ef",
+  "bg_ice_11": "c4ac1971-ef37-4268-9df3-acd25f14f009"
+ },
+ "prompts": {
+  "grounds": {
+   "desert": "Sun-baked desert ruins: warm sandstone tiles on top, broken carved pillars along the back edge, a few teal glazed tiles and gold ornaments, small sand drifts over the stones.",
+   "forge": "A dwarven forge: dark iron and stone floor plates with rivets on top, an anvil and a small chimney furnace along the back edge, glowing orange lava cracks in the rock below.",
+   "neon": "A cyberpunk rooftop: black metal grating and concrete on top, air vents, cables and a small glowing cyan and magenta neon sign along the back edge, rusty pipes underneath.",
+   "forest": "An ancient mossy forest outcrop: soft green moss and grass on top, twisted roots, small glowing mushrooms and ferns along the back edge, mossy grey rock below.",
+   "ice": "A frozen citadel terrace: pale blue ice and white marble tiles on top, sharp ice crystals and a broken silver railing along the back edge, frosted rock below."
+  },
+  "backs": {
+   "desert": "An endless golden desert at sunset with distant ruined temples and giant sandstone arches, warm haze and drifting dust, teal sky fading to orange.",
+   "forge": "A vast underground dwarven forge hall with towering stone columns, rivers of glowing lava, chains and giant gears in the distance, warm orange light and smoke.",
+   "neon": "A rainy cyberpunk city at night with tall skyscrapers covered in cyan and magenta neon signs, flying cars and holograms in the distance, purple fog.",
+   "forest": "An ancient enchanted forest with giant mossy trees, glowing green spores and light shafts through the canopy, soft mist.",
+   "ice": "A frozen mountain kingdom with an ice citadel on distant peaks, an aurora in a deep blue night sky, falling snow and pale moonlight."
+  },
+  "weapons": {
+   "kaya_dagger": "A curved desert dagger with a polished steel crescent blade, a gold crossguard and a handle wrapped in teal cloth with a gold pommel.",
+   "brumm_hammer": "A heavy dwarven forge hammer with a large square iron head with riveted bands and a glowing orange rune, and a long thick wooden handle wrapped in brown leather.",
+   "volt_blade": "A futuristic cyberpunk short sword with a black high-tech handle and a sleek blade with a glowing cyan energy edge and small magenta lights.",
+   "wren_bow": "An elegant wooden longbow made of curved dark wood with green leaves growing along it, a softly glowing green rune at the grip and a thin bowstring.",
+   "frostine_staff": "A tall silver mage staff topped with a large glowing pale blue ice crystal held by silver prongs, with small ice shards along the shaft."
+  },
+  "G_SUF": "Stylized 3D game environment asset in the style of a modern hero shooter like Overwatch, a single wide floating island platform with a flat walkable top surface and a rocky underside that tapers downward, isolated and centered, the whole island visible with empty space around it, seen from the front and slightly above, plain flat light gray background, soft even studio lighting, clean hand-painted PBR materials, no characters, no text.",
+  "B_SUF": "Background art for a side-scrolling action game, wide panoramic view, stylized painterly 3D look like Overwatch, soft atmospheric depth, distant elements only, no characters, no foreground ground or platforms, calm empty lower third for gameplay, no text, no UI.",
+  "W_SUF": "Stylized 3D game weapon asset in the style of a modern hero shooter like Overwatch and Fortnite, a single object floating, isolated and centered, shown complete from end to end, seen from the side at a slight angle, plain flat light gray background, soft even studio lighting, clean hand-painted PBR materials, bold readable shape, no hands, no characters, no text."
+ }
+}

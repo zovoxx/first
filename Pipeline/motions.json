@@ -1,0 +1,92 @@
+[
+ [
+  "idle",
+  "A person stands in a relaxed fighting stance, breathing calmly and shifting weight slightly.",
+  4.0
+ ],
+ [
+  "run",
+  "A person runs forward at a fast steady pace.",
+  3.0
+ ],
+ [
+  "dash",
+  "A person crouches slightly and dashes forward in a quick short burst, then stops.",
+  1.2
+ ],
+ [
+  "jump",
+  "A person jumps straight up and lands softly.",
+  1.6
+ ],
+ [
+  "roll",
+  "A person does a quick forward roll on the ground and gets back up.",
+  1.8
+ ],
+ [
+  "hit",
+  "A person gets hit in the chest, staggers back one step and recovers.",
+  1.0
+ ],
+ [
+  "victory",
+  "A person raises one fist in the air in victory and cheers.",
+  2.5
+ ],
+ [
+  "kaya_attack1",
+  "A person quickly slashes twice with a knife in the right hand, from right to left and back.",
+  1.2
+ ],
+ [
+  "kaya_attack2",
+  "A person spins around once while slashing with both hands outstretched.",
+  1.4
+ ],
+ [
+  "brumm_attack1",
+  "A person swings a heavy hammer horizontally from right to left with both hands.",
+  1.5
+ ],
+ [
+  "brumm_attack2",
+  "A person raises a heavy hammer above the head with both hands and smashes it down onto the ground.",
+  1.8
+ ],
+ [
+  "volt_attack1",
+  "A person slashes a sword diagonally downward with the right hand, then pulls back.",
+  1.2
+ ],
+ [
+  "volt_attack2",
+  "A person lunges forward and thrusts a sword straight ahead with the right hand.",
+  1.2
+ ],
+ [
+  "wren_attack1",
+  "A person holds a bow in the left hand, draws the string back with the right hand, aims and shoots an arrow.",
+  1.8
+ ],
+ [
+  "wren_attack2",
+  "A person kicks forward with the right leg and then steps back.",
+  1.2
+ ],
+ [
+  "frostine_attack1",
+  "A person casts a spell by thrusting both hands forward with force.",
+  1.2
+ ],
+ [
+  "frostine_attack2",
+  "A person raises a staff with both hands and slams its end down onto the ground.",
+  1.6
+ ],
+ [
+  "death",
+  "A person gets hit hard in the chest, staggers backward and falls flat on their back, then lies still. (seed 33)",
+  2.5
+ ]
+]

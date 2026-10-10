@@ -1,0 +1,15 @@
+{
+ "track": "menu",
+ "bpm": 92.46,
+ "time_signature": "4/4",
+ "bars": 24,
+ "loop_seconds": 62.2972,
+ "loop_samples": 2990266,
+ "sample_rate": 48000,
+ "source_window_s": [
+  8.274,
+  70.571
+ ],
+ "gain_db": -0.44,
+ "join_jump": 0.047
+}

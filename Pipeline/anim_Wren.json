@@ -1,0 +1,104 @@
+{
+ "idle": {
+  "frames": 120,
+  "heading_fix_deg": -0.1,
+  "scale_k": 0.9341,
+  "kind": "loop",
+  "ground_dz": -0.0025,
+  "max_lift": 0.0032,
+  "root_disp_xy": [
+   -0.014,
+   -0.008
+  ],
+  "duration_s": 2.333,
+  "loop_start": 6,
+  "loop_end": 76,
+  "len": 70,
+  "pose_dist": 0.1684
+ },
+ "run": {
+  "frames": 90,
+  "heading_fix_deg": 1.1,
+  "scale_k": 0.9341,
+  "kind": "loop",
+  "ground_dz": -0.0154,
+  "max_lift": 0.0237,
+  "root_disp_xy": [
+   0.179,
+   -7.433
+  ],
+  "duration_s": 0.833,
+  "loop_start": 44,
+  "loop_end": 69,
+  "len": 25,
+  "pose_dist": 0.3835,
+  "run_speed_mps": 2.756
+ },
+ "jump": {
+  "frames": 48,
+  "heading_fix_deg": 0.0,
+  "scale_k": 0.9341,
+  "kind": "jump",
+  "ground_dz": -0.0128,
+  "max_lift": 0.1389,
+  "root_disp_xy": [
+   0.063,
+   0.0
+  ],
+  "duration_s": 1.6,
+  "airborne_peak_m": 0.286
+ },
+ "dodge": {
+  "frames": 36,
+  "heading_fix_deg": 0.5,
+  "scale_k": 0.9341,
+  "kind": "oneshot",
+  "ground_dz": 0.0102,
+  "max_lift": 0.0021,
+  "root_disp_xy": [
+   0.386,
+   0.675
+  ],
+  "duration_s": 1.2
+ },
+ "hit": {
+  "frames": 30,
+  "heading_fix_deg": -0.9,
+  "scale_k": 0.9341,
+  "kind": "oneshot",
+  "ground_dz": -0.0062,
+  "max_lift": 0.0122,
+  "root_disp_xy": [
+   0.012,
+   0.009
+  ],
+  "duration_s": 1.0
+ },
+ "death": {
+  "frames": 75,
+  "fps": 30.0,
+  "heading_fix_deg": 0.4,
+  "scale_k": 0.9341,
+  "kind": "oneshot",
+  "ground_dz": -0.0074,
+  "max_lift": 0.2576,
+  "root_disp_xy": [
+   0.032,
+   0.53
+  ],
+  "duration_s": 2.5
+ },
+ "attack": {
+  "frames": 60,
+  "heading_fix_deg": 0.2,
+  "scale_k": 0.9341,
+  "kind": "oneshot",
+  "ground_dz": -0.006,
+  "max_lift": 0.0049,
+  "root_disp_xy": [
+   -0.004,
+   -0.009
+  ],
+  "duration_s": 2.0
+ }
+}

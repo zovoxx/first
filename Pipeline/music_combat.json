@@ -1,0 +1,19 @@
+{
+ "track": "combat",
+ "bpm": 150.0,
+ "time_signature": "4/4",
+ "bars": 60,
+ "loop_seconds": 96.0,
+ "loop_samples": 4608000,
+ "sample_rate": 48000,
+ "source_window_s": [
+  6.694,
+  102.694
+ ],
+ "gain_db": -1.21,
+ "similarity": [
+  0.9994,
+  0.9996
+ ],
+ "beat_strength": 14.58
+}

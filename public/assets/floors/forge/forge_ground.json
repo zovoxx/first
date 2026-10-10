@@ -1,0 +1,146 @@
+{
+ "name": "forge_ground",
+ "biome": "forge",
+ "units": "metres",
+ "up_axis": "+Y",
+ "coordinate_system": "right-handed, Y-up (glTF / RUB)",
+ "files": {
+  "splat_pc": "forge_ground_PC.spz",
+  "splat_mobile": "forge_ground_mobile.spz",
+  "splat_ply_source": "forge_ground.ply",
+  "collider": "forge_collider.glb",
+  "preview": "forge_preview.png"
+ },
+ "gaussians": {
+  "pc": 262144,
+  "mobile": 65536
+ },
+ "size_m": [
+  8.0,
+  2.67,
+  8.01
+ ],
+ "top_surface_y": 0.0,
+ "walk_line": [
+  [
+   -4.0,
+   -0.042
+  ],
+  [
+   -3.25,
+   0.017
+  ],
+  [
+   -0.917,
+   -0.007
+  ],
+  [
+   1.083,
+   0.031
+  ],
+  [
+   2.75,
+   -0.002
+  ],
+  [
+   3.25,
+   0.016
+  ],
+  [
+   4.0,
+   -0.059
+  ]
+ ],
+ "outline_2d": [
+  [
+   -4.0,
+   -0.042
+  ],
+  [
+   -3.25,
+   0.017
+  ],
+  [
+   -0.917,
+   -0.007
+  ],
+  [
+   1.083,
+   0.031
+  ],
+  [
+   2.75,
+   -0.002
+  ],
+  [
+   3.25,
+   0.016
+  ],
+  [
+   4.0,
+   -0.059
+  ],
+  [
+   3.857,
+   -1.327
+  ],
+  [
+   3.286,
+   -1.771
+  ],
+  [
+   2.429,
+   -1.858
+  ],
+  [
+   0.143,
+   -2.792
+  ],
+  [
+   -0.143,
+   -2.792
+  ],
+  [
+   -0.714,
+   -2.563
+  ],
+  [
+   -1.286,
+   -2.445
+  ],
+  [
+   -1.857,
+   -2.046
+  ],
+  [
+   -2.143,
+   -1.949
+  ],
+  [
+   -3.286,
+   -1.768
+  ],
+  [
+   -3.857,
+   -1.323
+  ]
+ ],
+ "depth_z": [
+  -3.99,
+  4.02
+ ],
+ "baked_transform_from_triposplat": {
+  "rotation_euler_deg": [
+   180,
+   0,
+   0
+  ],
+  "scale": 8.37624,
+  "translation": [
+   -0.03646,
+   -1.3835,
+   -0.02212
+  ],
+  "note": "already applied to the files; TripoSplat output is y-down"
+ }
+}

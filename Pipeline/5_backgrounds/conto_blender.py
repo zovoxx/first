@@ -65,7 +65,7 @@ def _seam_path(E, lo, hi):
 
 
 def far_layer(src, name, blend=320, feather=6):
-    out = os.path.join(ROOT, "Backgrounds", name)
+    out = os.path.join(ROOT, "backgrounds", name)
     os.makedirs(out, exist_ok=True)
     a = load_px(src)
     h, w = a.shape[:2]
@@ -86,7 +86,7 @@ def far_layer(src, name, blend=320, feather=6):
 
 
 def mid_layer(src_rgba, name, fade=48):
-    out = os.path.join(ROOT, "Backgrounds", name)
+    out = os.path.join(ROOT, "backgrounds", name)
     os.makedirs(out, exist_ok=True)
     a = load_px(src_rgba)
     h, w = a.shape[:2]
@@ -206,7 +206,7 @@ def key_cut(orig_path, biref_path=None, t_low=0.07):
 
 def mid_layer_tile(rgba, name, blend=320, feather=5):
     """Seamless horizontal tile from an RGBA strip (min-error seam on premultiplied colour + alpha)."""
-    out = os.path.join(ROOT, "Backgrounds", name)
+    out = os.path.join(ROOT, "backgrounds", name)
     os.makedirs(out, exist_ok=True)
     a = rgba
     h, w = a.shape[:2]
@@ -298,7 +298,7 @@ def _pyr_blend(A, B, M, levels=5):
 
 
 def far_layer_mb(src, name, blend=400, margin=90, levels=5, edge=24):
-    out = os.path.join(ROOT, "Backgrounds", name)
+    out = os.path.join(ROOT, "backgrounds", name)
     os.makedirs(out, exist_ok=True)
     a = load_px(src)
     h, w = a.shape[:2]
@@ -345,7 +345,7 @@ def _gauss(x, r, axes=(0, 1)):
 def far_layer_mb2(src, name, blend=400, margin=90, levels=5, edge=24, lowr=10, dr=20):
     """Seamless far layer: min-error seam + multi-band blend + whole-width low-frequency colour ramp,
     so brightness/colour differences between the two image ends are spread across the full tile."""
-    out = os.path.join(ROOT, "Backgrounds", name)
+    out = os.path.join(ROOT, "backgrounds", name)
     os.makedirs(out, exist_ok=True)
     a = load_px(src)
     h, w = a.shape[:2]
@@ -389,7 +389,7 @@ def far_layer_mb3(src, name, blend=400, margin=90, levels=5, edge=24, lowr=10, d
                   wide=180.0, g_lo=0.004, g_hi=0.012, save=True):
     """far_layer_mb2 + adaptive transition width: rows without vertical structure (sky, soft clouds)
     cross-fade over `wide` px, rows with vertical detail (cliffs, buildings, trunks) keep a sharp cut."""
-    out = os.path.join(ROOT, "Backgrounds", name)
+    out = os.path.join(ROOT, "backgrounds", name)
     os.makedirs(out, exist_ok=True)
     a = load_px(src)
     h, w = a.shape[:2]
@@ -458,7 +458,7 @@ def _mid_E(a, pm, s, t, bw):
 def mid_layer_tile2(rgba, name, bw=256, feather=5, search_t=448, search_e=640, step=16, drop_penalty=0.004, save=True):
     """Seamless horizontal tile from an RGBA strip. Searches which columns to join (start t, end e) so the
     seam runs through matching content (usually just the ground strip), then blends along a min-error seam."""
-    out = os.path.join(ROOT, "Backgrounds", name)
+    out = os.path.join(ROOT, "backgrounds", name)
     os.makedirs(out, exist_ok=True)
     a = rgba
     h, w = a.shape[:2]

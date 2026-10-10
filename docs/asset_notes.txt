@@ -6,14 +6,15 @@ Everything has a PC version and a mobile version. Side-view 2.5D game, stylized 
 FOLDERS
   contoo_assets.json        everything the game code needs: file paths, clip lengths, loops, attack hit times,
                             walk lines, parallax speeds, music BPM and loop lengths
-  Assets/Characters/<Name>  <Name>_PC.glb and <Name>_mobile.glb - rigged (21 bones), weapon already in the hand,
+  Assets/characters/<Name>  <Name>_PC.glb and <Name>_mobile.glb - rigged (21 bones), weapon already in the hand,
                             7 animations: idle, run, jump, dodge, hit, attack, death
-  Assets/Weapons/<id>       the 5 weapons on their own (origin = grip, long axis = +Y)
-  Assets/Grounds/<biome>    gaussian-splat ground (.spz PC / mobile, .ply source), collider .glb, preview .png,
+  Assets/weapons/<id>       the 5 weapons on their own (origin = grip, long axis = +Y)
+  Assets/floors/<biome>     gaussian-splat ground (.spz PC / mobile, .ply source), collider .glb, preview .png,
                             <biome>_ground.json with the walk line
-  Assets/Backgrounds/<biome> far + mid parallax layers, both tile left-right (mid has transparency)
-  Assets/Music              menu, combat and boss loops (seamless), .ogg + .mp3
-  Blender/Contoo_characters.blend   the Blender work file: all 5 characters, rigs, animation tracks, weapons
+  Assets/backgrounds/<biome> far + mid parallax layers, both tile left-right (mid has transparency)
+  Assets/music              menu, combat and boss loops (seamless), .ogg + .mp3
+  Blender/Contoo_characters.blend   (not in this repo) the Blender work file: all 5 characters, rigs, animation tracks, weapons
+  public/assets/            web copies of everything above except Weapons.blend and the .ply sources
   Pipeline/                 the scripts + Kimodo motions used to make all of this (to run the conto again)
 
 CHARACTERS (biome = home stage)

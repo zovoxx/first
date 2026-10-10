@@ -17,7 +17,12 @@ LOOPS = {"idle", "run"}
 
 
 def _rel(p):
-    return os.path.relpath(p, CONTOO).replace("\\", "/")
+    """Repo-relative path. Game-ready files point to their public/assets/ copy (served by Cloudflare);
+    source-only files (.ply) stay under Assets/."""
+    r = os.path.relpath(p, CONTOO).replace("\\", "/")
+    if r.startswith("Assets/") and not r.endswith(".ply"):
+        r = "public/assets/" + r[len("Assets/"):]
+    return r
 
 
 def _png_size(p):
@@ -83,7 +88,7 @@ def build(hit_times=None):
                            "fps_animations": 30, "platforms": {"pc": "files ending _PC", "mobile": "files ending _mobile"}},
            "characters": [], "weapons": [], "grounds": [], "backgrounds": [], "music": []}
     for n, d in CHARS.items():
-        cd = os.path.join(A, "Characters", n)
+        cd = os.path.join(A, "characters", n)
         pc, mb = os.path.join(cd, f"{n}_PC.glb"), os.path.join(cd, f"{n}_mobile.glb")
         gp, gm = _glb(pc), _glb(mb)
         meta = {}
@@ -106,19 +111,19 @@ def build(hit_times=None):
                                   "triangles": {"pc": gp["tris"], "mobile": gm["tris"]}, "MB": {"pc": gp["MB"], "mobile": gm["MB"]},
                                   "weapon": {"id": d["weapon"], "attached_to": d["hands"], "note": "already inside the character GLB"},
                                   "clips": clips})
-    for p in sorted(glob.glob(os.path.join(A, "Weapons", "*", "*_PC.glb"))):
+    for p in sorted(glob.glob(os.path.join(A, "weapons", "*", "*_PC.glb"))):
         wid = os.path.basename(os.path.dirname(p))
         g = _glb(p)
         man["weapons"].append({"id": wid, "files": {"pc": _rel(p), "mobile": _rel(p.replace("_PC.glb", "_mobile.glb"))},
                                "length_m": round(g["bbox_max"][1] - g["bbox_min"][1], 3), "origin": "grip", "long_axis_gltf": "+Y",
                                "triangles": {"pc": g["tris"], "mobile": _glb(p.replace("_PC.glb", "_mobile.glb"))["tris"]}})
     for b in ("desert", "forge", "neon", "forest", "ice"):
-        gj = json.load(open(os.path.join(A, "Grounds", b, f"{b}_ground.json")))
+        gj = json.load(open(os.path.join(A, "floors", b, f"{b}_ground.json")))
         f = gj["files"]
-        man["grounds"].append({"biome": b, "files": {k: _rel(os.path.join(A, "Grounds", b, v)) for k, v in f.items()},
+        man["grounds"].append({"biome": b, "files": {k: _rel(os.path.join(A, "floors", b, v)) for k, v in f.items()},
                                "gaussians": gj.get("gaussians"), "size_m": gj.get("size_m"), "top_surface_y": gj.get("top_surface_y", 0.0),
                                "walk_line": gj.get("walk_line"), "renderer": "Gaussian splats (e.g. Spark for three.js); collider = walk_line or collider GLB"})
-        bd = os.path.join(A, "Backgrounds", b)
+        bd = os.path.join(A, "backgrounds", b)
         fp, mp = os.path.join(bd, f"{b}_far_PC.png"), os.path.join(bd, f"{b}_mid_PC.png")
         man["backgrounds"].append({"biome": b,
                                    "far": {"pc": _rel(fp), "mobile": _rel(os.path.join(bd, f"{b}_far_mobile.webp")), "size_pc": _png_size(fp),
@@ -130,23 +135,39 @@ def build(hit_times=None):
         e = {"track": t, "bpm": round(mj["bpm"], 2), "loop_seconds": round(mj["loop_seconds"], 3), "seamless_loop": True, "files": {}}
         for plat in ("PC", "mobile"):
             for ext in ("ogg", "mp3"):
-                p = os.path.join(A, "Music", f"contoo_{t}_loop_{plat}.{ext}")
+                p = os.path.join(A, "music", f"contoo_{t}_loop_{plat}.{ext}")
                 if os.path.exists(p):
                     e["files"][f"{plat.lower()}_{ext}"] = _rel(p)
         man["music"].append(e)
     out = os.path.join(CONTOO, "contoo_assets.json")
     json.dump(man, open(out, "w", encoding="utf-8"), indent=1)
+    web = os.path.join(CONTOO, "public", "assets", "contoo_assets.json")   # copy the browser can fetch
+    if os.path.isdir(os.path.dirname(web)):
+        shutil.copyfile(out, web)
     return out, man
 
 
 def backup_pipeline():
     dst = os.path.join(CONTOO, "Pipeline")
-    os.makedirs(os.path.join(dst, "kimodo"), exist_ok=True)
+    # Scripts run flat from W (they import each other); the repo keeps them sorted by pipeline stage.
+    stages = {
+        "0_shared": ("comfy_pipe.py", "conto_pipe.py", "wf_bundle.json", "contoo_concepts.json"),
+        "1_characters_weapons": ("char_blender.py", "conto_weapons.py", "conto_lod.py", "conto_lod2.py", "conto_lod3.py",
+                                 "gc_fix_mobile.py", "*_L.json"),
+        "2_floors": ("conto_grounds.py", "ground_*.json"),
+        "3_animations": ("conto_anim.py", "conto_anim_bl.py", "conto_regen.py", "kimodo_ctl.py", "motions.json", "rigs.json",
+                         "anim_*.json", "grip_*.json"),
+        "4_music": ("conto_music.py", "music_*.json"),
+        "5_backgrounds": ("conto_blender.py",),
+        "6_finish": ("conto_finish.py", "conto_verify.py", "conto_manifest.py", "probe_blend.py"),
+    }
     n = 0
-    for pat in ("conto_*.py", "comfy_pipe.py", "char_blender.py", "kimodo_ctl.py", "wf_bundle.json", "motions.json", "rigs.json",
-                "contoo_concepts.json", "anim_*.json", "grip_*.json", "ground_*.json", "music_*.json", "*_L.json"):
-        for f in glob.glob(os.path.join(W, pat)):
-            shutil.copyfile(f, os.path.join(dst, os.path.basename(f))); n += 1
+    for stage, pats in stages.items():
+        os.makedirs(os.path.join(dst, stage), exist_ok=True)
+        for pat in pats:
+            for f in glob.glob(os.path.join(W, pat)):
+                shutil.copyfile(f, os.path.join(dst, stage, os.path.basename(f))); n += 1
+    os.makedirs(os.path.join(dst, "3_animations", "kimodo"), exist_ok=True)
     for f in glob.glob(os.path.join(W, "kimodo", "*.bvh")):
-        shutil.copyfile(f, os.path.join(dst, "kimodo", os.path.basename(f))); n += 1
+        shutil.copyfile(f, os.path.join(dst, "3_animations", "kimodo", os.path.basename(f))); n += 1
     return dst, n

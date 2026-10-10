@@ -166,7 +166,7 @@ def fix_death_weapon(scene_name, rig_name, weapon_names, bone, track="death", re
 # ------------------------------------------------------------------ exports
 def export_char(name, out_root=None):
     import conto_anim_bl as cab
-    out_root = out_root or os.path.join(ROOT, "Characters")
+    out_root = out_root or os.path.join(ROOT, "characters")
     sc = bpy.data.scenes[f"C_{name}"]
     bpy.context.window.scene = sc
     rig = bpy.data.objects[f"{name}_Rig"]

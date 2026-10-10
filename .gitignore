@@ -1,0 +1,17 @@
+# Cloudflare / Wrangler
+.wrangler/
+.dev.vars
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Blender autosaves / backups
+*.blend1
+*.blend2
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini

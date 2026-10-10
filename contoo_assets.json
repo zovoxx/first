@@ -19,8 +19,8 @@
    "home_biome": "desert",
    "height_m": 1.7,
    "files": {
-    "pc": "Assets/Characters/Kaya/Kaya_PC.glb",
-    "mobile": "Assets/Characters/Kaya/Kaya_mobile.glb"
+    "pc": "public/assets/characters/Kaya/Kaya_PC.glb",
+    "mobile": "public/assets/characters/Kaya/Kaya_mobile.glb"
    },
    "triangles": {
     "pc": 59525,
@@ -78,8 +78,8 @@
    "home_biome": "forge",
    "height_m": 1.3,
    "files": {
-    "pc": "Assets/Characters/Brumm/Brumm_PC.glb",
-    "mobile": "Assets/Characters/Brumm/Brumm_mobile.glb"
+    "pc": "public/assets/characters/Brumm/Brumm_PC.glb",
+    "mobile": "public/assets/characters/Brumm/Brumm_mobile.glb"
    },
    "triangles": {
     "pc": 59230,
@@ -136,8 +136,8 @@
    "home_biome": "neon",
    "height_m": 1.78,
    "files": {
-    "pc": "Assets/Characters/Volt/Volt_PC.glb",
-    "mobile": "Assets/Characters/Volt/Volt_mobile.glb"
+    "pc": "public/assets/characters/Volt/Volt_PC.glb",
+    "mobile": "public/assets/characters/Volt/Volt_mobile.glb"
    },
    "triangles": {
     "pc": 59010,
@@ -194,8 +194,8 @@
    "home_biome": "forest",
    "height_m": 1.95,
    "files": {
-    "pc": "Assets/Characters/Wren/Wren_PC.glb",
-    "mobile": "Assets/Characters/Wren/Wren_mobile.glb"
+    "pc": "public/assets/characters/Wren/Wren_PC.glb",
+    "mobile": "public/assets/characters/Wren/Wren_mobile.glb"
    },
    "triangles": {
     "pc": 58069,
@@ -252,8 +252,8 @@
    "home_biome": "ice",
    "height_m": 1.92,
    "files": {
-    "pc": "Assets/Characters/Frostine/Frostine_PC.glb",
-    "mobile": "Assets/Characters/Frostine/Frostine_mobile.glb"
+    "pc": "public/assets/characters/Frostine/Frostine_PC.glb",
+    "mobile": "public/assets/characters/Frostine/Frostine_mobile.glb"
    },
    "triangles": {
     "pc": 57900,
@@ -309,8 +309,8 @@
   {
    "id": "brumm_hammer",
    "files": {
-    "pc": "Assets/Weapons/brumm_hammer/brumm_hammer_PC.glb",
-    "mobile": "Assets/Weapons/brumm_hammer/brumm_hammer_mobile.glb"
+    "pc": "public/assets/weapons/brumm_hammer/brumm_hammer_PC.glb",
+    "mobile": "public/assets/weapons/brumm_hammer/brumm_hammer_mobile.glb"
    },
    "length_m": 0.951,
    "origin": "grip",
@@ -323,8 +323,8 @@
   {
    "id": "frostine_staff",
    "files": {
-    "pc": "Assets/Weapons/frostine_staff/frostine_staff_PC.glb",
-    "mobile": "Assets/Weapons/frostine_staff/frostine_staff_mobile.glb"
+    "pc": "public/assets/weapons/frostine_staff/frostine_staff_PC.glb",
+    "mobile": "public/assets/weapons/frostine_staff/frostine_staff_mobile.glb"
    },
    "length_m": 1.75,
    "origin": "grip",
@@ -337,8 +337,8 @@
   {
    "id": "kaya_dagger",
    "files": {
-    "pc": "Assets/Weapons/kaya_dagger/kaya_dagger_PC.glb",
-    "mobile": "Assets/Weapons/kaya_dagger/kaya_dagger_mobile.glb"
+    "pc": "public/assets/weapons/kaya_dagger/kaya_dagger_PC.glb",
+    "mobile": "public/assets/weapons/kaya_dagger/kaya_dagger_mobile.glb"
    },
    "length_m": 0.42,
    "origin": "grip",
@@ -351,8 +351,8 @@
   {
    "id": "volt_baton",
    "files": {
-    "pc": "Assets/Weapons/volt_baton/volt_baton_PC.glb",
-    "mobile": "Assets/Weapons/volt_baton/volt_baton_mobile.glb"
+    "pc": "public/assets/weapons/volt_baton/volt_baton_PC.glb",
+    "mobile": "public/assets/weapons/volt_baton/volt_baton_mobile.glb"
    },
    "length_m": 0.65,
    "origin": "grip",
@@ -365,8 +365,8 @@
   {
    "id": "wren_bow",
    "files": {
-    "pc": "Assets/Weapons/wren_bow/wren_bow_PC.glb",
-    "mobile": "Assets/Weapons/wren_bow/wren_bow_mobile.glb"
+    "pc": "public/assets/weapons/wren_bow/wren_bow_PC.glb",
+    "mobile": "public/assets/weapons/wren_bow/wren_bow_mobile.glb"
    },
    "length_m": 1.35,
    "origin": "grip",
@@ -381,11 +381,11 @@
   {
    "biome": "desert",
    "files": {
-    "splat_pc": "Assets/Grounds/desert/desert_ground_PC.spz",
-    "splat_mobile": "Assets/Grounds/desert/desert_ground_mobile.spz",
-    "splat_ply_source": "Assets/Grounds/desert/desert_ground.ply",
-    "collider": "Assets/Grounds/desert/desert_collider.glb",
-    "preview": "Assets/Grounds/desert/desert_preview.png"
+    "splat_pc": "public/assets/floors/desert/desert_ground_PC.spz",
+    "splat_mobile": "public/assets/floors/desert/desert_ground_mobile.spz",
+    "splat_ply_source": "Assets/floors/desert/desert_ground.ply",
+    "collider": "public/assets/floors/desert/desert_collider.glb",
+    "preview": "public/assets/floors/desert/desert_preview.png"
    },
    "gaussians": {
     "pc": 262144,
@@ -468,11 +468,11 @@
   {
    "biome": "forge",
    "files": {
-    "splat_pc": "Assets/Grounds/forge/forge_ground_PC.spz",
-    "splat_mobile": "Assets/Grounds/forge/forge_ground_mobile.spz",
-    "splat_ply_source": "Assets/Grounds/forge/forge_ground.ply",
-    "collider": "Assets/Grounds/forge/forge_collider.glb",
-    "preview": "Assets/Grounds/forge/forge_preview.png"
+    "splat_pc": "public/assets/floors/forge/forge_ground_PC.spz",
+    "splat_mobile": "public/assets/floors/forge/forge_ground_mobile.spz",
+    "splat_ply_source": "Assets/floors/forge/forge_ground.ply",
+    "collider": "public/assets/floors/forge/forge_collider.glb",
+    "preview": "public/assets/floors/forge/forge_preview.png"
    },
    "gaussians": {
     "pc": 262144,
@@ -519,11 +519,11 @@
   {
    "biome": "neon",
    "files": {
-    "splat_pc": "Assets/Grounds/neon/neon_ground_PC.spz",
-    "splat_mobile": "Assets/Grounds/neon/neon_ground_mobile.spz",
-    "splat_ply_source": "Assets/Grounds/neon/neon_ground.ply",
-    "collider": "Assets/Grounds/neon/neon_collider.glb",
-    "preview": "Assets/Grounds/neon/neon_preview.png"
+    "splat_pc": "public/assets/floors/neon/neon_ground_PC.spz",
+    "splat_mobile": "public/assets/floors/neon/neon_ground_mobile.spz",
+    "splat_ply_source": "Assets/floors/neon/neon_ground.ply",
+    "collider": "public/assets/floors/neon/neon_collider.glb",
+    "preview": "public/assets/floors/neon/neon_preview.png"
    },
    "gaussians": {
     "pc": 262144,
@@ -606,11 +606,11 @@
   {
    "biome": "forest",
    "files": {
-    "splat_pc": "Assets/Grounds/forest/forest_ground_PC.spz",
-    "splat_mobile": "Assets/Grounds/forest/forest_ground_mobile.spz",
-    "splat_ply_source": "Assets/Grounds/forest/forest_ground.ply",
-    "collider": "Assets/Grounds/forest/forest_collider.glb",
-    "preview": "Assets/Grounds/forest/forest_preview.png"
+    "splat_pc": "public/assets/floors/forest/forest_ground_PC.spz",
+    "splat_mobile": "public/assets/floors/forest/forest_ground_mobile.spz",
+    "splat_ply_source": "Assets/floors/forest/forest_ground.ply",
+    "collider": "public/assets/floors/forest/forest_collider.glb",
+    "preview": "public/assets/floors/forest/forest_preview.png"
    },
    "gaussians": {
     "pc": 262144,
@@ -637,11 +637,11 @@
   {
    "biome": "ice",
    "files": {
-    "splat_pc": "Assets/Grounds/ice/ice_ground_PC.spz",
-    "splat_mobile": "Assets/Grounds/ice/ice_ground_mobile.spz",
-    "splat_ply_source": "Assets/Grounds/ice/ice_ground.ply",
-    "collider": "Assets/Grounds/ice/ice_collider.glb",
-    "preview": "Assets/Grounds/ice/ice_preview.png"
+    "splat_pc": "public/assets/floors/ice/ice_ground_PC.spz",
+    "splat_mobile": "public/assets/floors/ice/ice_ground_mobile.spz",
+    "splat_ply_source": "Assets/floors/ice/ice_ground.ply",
+    "collider": "public/assets/floors/ice/ice_collider.glb",
+    "preview": "public/assets/floors/ice/ice_preview.png"
    },
    "gaussians": {
     "pc": 262144,
@@ -694,8 +694,8 @@
   {
    "biome": "desert",
    "far": {
-    "pc": "Assets/Backgrounds/desert/desert_far_PC.png",
-    "mobile": "Assets/Backgrounds/desert/desert_far_mobile.webp",
+    "pc": "public/assets/backgrounds/desert/desert_far_PC.png",
+    "mobile": "public/assets/backgrounds/desert/desert_far_mobile.webp",
     "size_pc": [
      1648,
      896
@@ -704,8 +704,8 @@
     "suggested_parallax": 0.15
    },
    "mid": {
-    "pc": "Assets/Backgrounds/desert/desert_mid_PC.png",
-    "mobile": "Assets/Backgrounds/desert/desert_mid_mobile.webp",
+    "pc": "public/assets/backgrounds/desert/desert_mid_PC.png",
+    "mobile": "public/assets/backgrounds/desert/desert_mid_mobile.webp",
     "size_pc": [
      1616,
      603
@@ -719,8 +719,8 @@
   {
    "biome": "forge",
    "far": {
-    "pc": "Assets/Backgrounds/forge/forge_far_PC.png",
-    "mobile": "Assets/Backgrounds/forge/forge_far_mobile.webp",
+    "pc": "public/assets/backgrounds/forge/forge_far_PC.png",
+    "mobile": "public/assets/backgrounds/forge/forge_far_mobile.webp",
     "size_pc": [
      1648,
      896
@@ -729,8 +729,8 @@
     "suggested_parallax": 0.15
    },
    "mid": {
-    "pc": "Assets/Backgrounds/forge/forge_mid_PC.png",
-    "mobile": "Assets/Backgrounds/forge/forge_mid_mobile.webp",
+    "pc": "public/assets/backgrounds/forge/forge_mid_PC.png",
+    "mobile": "public/assets/backgrounds/forge/forge_mid_mobile.webp",
     "size_pc": [
      1680,
      555
@@ -744,8 +744,8 @@
   {
    "biome": "neon",
    "far": {
-    "pc": "Assets/Backgrounds/neon/neon_far_PC.png",
-    "mobile": "Assets/Backgrounds/neon/neon_far_mobile.webp",
+    "pc": "public/assets/backgrounds/neon/neon_far_PC.png",
+    "mobile": "public/assets/backgrounds/neon/neon_far_mobile.webp",
     "size_pc": [
      1648,
      896
@@ -754,8 +754,8 @@
     "suggested_parallax": 0.15
    },
    "mid": {
-    "pc": "Assets/Backgrounds/neon/neon_mid_PC.png",
-    "mobile": "Assets/Backgrounds/neon/neon_mid_mobile.webp",
+    "pc": "public/assets/backgrounds/neon/neon_mid_PC.png",
+    "mobile": "public/assets/backgrounds/neon/neon_mid_mobile.webp",
     "size_pc": [
      1712,
      527
@@ -769,8 +769,8 @@
   {
    "biome": "forest",
    "far": {
-    "pc": "Assets/Backgrounds/forest/forest_far_PC.png",
-    "mobile": "Assets/Backgrounds/forest/forest_far_mobile.webp",
+    "pc": "public/assets/backgrounds/forest/forest_far_PC.png",
+    "mobile": "public/assets/backgrounds/forest/forest_far_mobile.webp",
     "size_pc": [
      1648,
      896
@@ -779,8 +779,8 @@
     "suggested_parallax": 0.15
    },
    "mid": {
-    "pc": "Assets/Backgrounds/forest/forest_mid_PC.png",
-    "mobile": "Assets/Backgrounds/forest/forest_mid_mobile.webp",
+    "pc": "public/assets/backgrounds/forest/forest_mid_PC.png",
+    "mobile": "public/assets/backgrounds/forest/forest_mid_mobile.webp",
     "size_pc": [
      1168,
      833
@@ -794,8 +794,8 @@
   {
    "biome": "ice",
    "far": {
-    "pc": "Assets/Backgrounds/ice/ice_far_PC.png",
-    "mobile": "Assets/Backgrounds/ice/ice_far_mobile.webp",
+    "pc": "public/assets/backgrounds/ice/ice_far_PC.png",
+    "mobile": "public/assets/backgrounds/ice/ice_far_mobile.webp",
     "size_pc": [
      1648,
      896
@@ -804,8 +804,8 @@
     "suggested_parallax": 0.15
    },
    "mid": {
-    "pc": "Assets/Backgrounds/ice/ice_mid_PC.png",
-    "mobile": "Assets/Backgrounds/ice/ice_mid_mobile.webp",
+    "pc": "public/assets/backgrounds/ice/ice_mid_PC.png",
+    "mobile": "public/assets/backgrounds/ice/ice_mid_mobile.webp",
     "size_pc": [
      1648,
      670
@@ -824,10 +824,10 @@
    "loop_seconds": 62.297,
    "seamless_loop": true,
    "files": {
-    "pc_ogg": "Assets/Music/contoo_menu_loop_PC.ogg",
-    "pc_mp3": "Assets/Music/contoo_menu_loop_PC.mp3",
-    "mobile_ogg": "Assets/Music/contoo_menu_loop_mobile.ogg",
-    "mobile_mp3": "Assets/Music/contoo_menu_loop_mobile.mp3"
+    "pc_ogg": "public/assets/music/contoo_menu_loop_PC.ogg",
+    "pc_mp3": "public/assets/music/contoo_menu_loop_PC.mp3",
+    "mobile_ogg": "public/assets/music/contoo_menu_loop_mobile.ogg",
+    "mobile_mp3": "public/assets/music/contoo_menu_loop_mobile.mp3"
    }
   },
   {
@@ -836,10 +836,10 @@
    "loop_seconds": 96.0,
    "seamless_loop": true,
    "files": {
-    "pc_ogg": "Assets/Music/contoo_combat_loop_PC.ogg",
-    "pc_mp3": "Assets/Music/contoo_combat_loop_PC.mp3",
-    "mobile_ogg": "Assets/Music/contoo_combat_loop_mobile.ogg",
-    "mobile_mp3": "Assets/Music/contoo_combat_loop_mobile.mp3"
+    "pc_ogg": "public/assets/music/contoo_combat_loop_PC.ogg",
+    "pc_mp3": "public/assets/music/contoo_combat_loop_PC.mp3",
+    "mobile_ogg": "public/assets/music/contoo_combat_loop_mobile.ogg",
+    "mobile_mp3": "public/assets/music/contoo_combat_loop_mobile.mp3"
    }
   },
   {
@@ -848,10 +848,10 @@
    "loop_seconds": 91.185,
    "seamless_loop": true,
    "files": {
-    "pc_ogg": "Assets/Music/contoo_boss_loop_PC.ogg",
-    "pc_mp3": "Assets/Music/contoo_boss_loop_PC.mp3",
-    "mobile_ogg": "Assets/Music/contoo_boss_loop_mobile.ogg",
-    "mobile_mp3": "Assets/Music/contoo_boss_loop_mobile.mp3"
+    "pc_ogg": "public/assets/music/contoo_boss_loop_PC.ogg",
+    "pc_mp3": "public/assets/music/contoo_boss_loop_PC.mp3",
+    "mobile_ogg": "public/assets/music/contoo_boss_loop_mobile.ogg",
+    "mobile_mp3": "public/assets/music/contoo_boss_loop_mobile.mp3"
    }
   }
  ]
